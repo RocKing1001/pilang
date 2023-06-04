@@ -78,6 +78,7 @@ impl Lexer {
                     dont_move = true;
                     let identifier = self.read_identifier();
                     match identifier.as_str() {
+                        "fn" => Tokens::FUNCTION,
                         "let" => Tokens::LET,
                         _ => Tokens::IDENT(identifier),
                     }
